@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Drink New</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />                                                                                                                                                                        
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    body{
+        box-sizing: border-box;
+        font-family: "Lato", sans-serif;
+    }
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    h2{
+        font-family: "Poppins", sans-serif;
+    }
+    .ld_header_banner{
+        background: url(images/slide-1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+    }
+    .ld_container{
+        /* width: 100%; */
+        width: 1200px;
+        margin: auto;
+        /* display: flex; */
+    }
+    .ld_top_header{
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0;
+    }
+    .mob_no{
+        color: #ffffff;
+    }
+    .email_id{
+        text-decoration: none;
+        color: #ffffff;
+    }
+    .ld_logo_1{
+        width: 157px;
+        height: 35px;
+    }
+    .ld_logo_1 img{
+        width: 100%;
+    }
+    .ld_search_icon{
+        color: #ffffff;
+    }
+    .ld_cart_icon{
+        color: #ffffff;
+    }
+    .round_text{
+        background: #fff;
+        color: #151515;
+        display: inline-block;
+        text-decoration: none;
+        padding: 5px 5px;
+        border-radius: 50%;
+        text-align: center;
+        font-family: "Poppins", sans-serif;
+        font-size: 15px;
+        line-height: 21px;
+        font-weight: 500;
+    }
+    nav{
+        border: 1px solid rgba(255, 255, 255, 0.23);
+        border-left: none;
+        border-right: none;
+    }
+    .ld_menu_bar{
+        display: flex;
+        gap: 30px;
+        list-style: none;
+        justify-content: center;
+        line-height: 50px;
+    }
+    .ld_menu_bar li a{
+        color: #ffffff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        /* letter-spacing: .1em; */
+    }
+    .ld_banner h2{
+        color: #ffffff;
+        font-size: 55px;
+        margin-bottom: 50px;
+        margin-top: 100px;
+    }
+    .ld_banner p{
+        color: #ffffff;
+        font-size: 18px;
+        margin-bottom: 50px;
+        margin-top: 25px;
+    }
+    .ld_banner_btn{
+        color: #151515;
+        text-decoration: none;
+        font-size: 14px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        background: #f9e95e;
+        padding: 20px 50px;
+        border-radius: 6px;
+        display: inline-block;
+    }
+    .ld_banner_btn:hover{
+        color: #151515;
+        text-decoration: none;
+        font-size: 14px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        background: #f7e869;
+        padding: 20px 50px;
+        border-radius: 6px;
+        display: inline-block;
+    }
+    h3{
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+    }
+    .ld_section1{
+        background: url(images/bg-pattern-1.jpg) repeat;
+        padding: 60px 0;
+    }
+    .ld_section1_area{
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+    .ld_section1_img{
+        grid-column: 2/3;
+        grid-row: 1/3;
+    }
+    .ld_section1_para p{
+        color: #777;
+        font-family: "Lato", sans-serif;
+        font-size: 15px;
+    }
+    h3{
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: 600;
+        color: #151515;
+    }
+    /* .ld_product_detailes{
+        background: #f5f5f5;
+    } */
+    .ld_section2_area{
+        display: flex;
+        gap: 20px;
+    }
+     .new_flavors{
+        font-size: 55px;
+        color: #151515;
+        text-align: center;
+        font-weight:600; 
+     }
+     .product1_png img{
+        display: block;
+        margin: auto;
+     }
+     .ld_product_detailes{
+        background: #f5f5f5;
+        width: 250px;
+        height: auto;
+        padding: 35px;
+        border-radius: 6px;
+    }
+    .sale_btn{
+        position: absolute;
+        background-color: #f96666;
+        color: #ffffff;
+        border-radius: 5px;
+        padding: 5px 10px;
+        font-size: 12px;
+        margin-left: 180px;
+    }
+     .product_text {
+        display: flex;
+        gap: 30px;
+        /* text-align: center; */
+        margin-top: 10px;
+        
+     }
+    .lineth{
+        text-decoration: line-through;
+        margin-left: 50px;
+    }
+    .mainpr{
+        color: #76aa6f;
+    }
+    .main_price{
+        text-align: center;
+        color: #76aa6f;
+        margin: auto;
+    }
+    .mango_text{
+        text-align: center;
+    }
+    .new_flavors{
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+    .ld_section3_area{
+        display: flex;
+        gap: 20px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .ld_section4{
+        background: url(images/parallax-2.jpg) no-repeat;
+        height: 346px;
+        background-size: cover;
+    }
+    .ld_number{
+        display: flex;
+        margin: auto;
+        gap: 150px;
+        font-size: 35px;
+        color: #fff;
+        text-align: center;
+        padding-top: 50px;
+        padding-left: 150px;
+    }
+    .ld_section4_area{
+        align-content: center;
+        padding-top: 50px;
+
+    }
+    .sec4_text p{
+        font-size: 18px;
+        font-family: "Poppins", sans-serif;
+        /* padding-top: 10px; */
+    }
+    .sec4_text h2{
+        padding-bottom: 25px;
+    }
+    .sec4_text h2::after{
+        content: '';
+        width: 42px;
+        height: 1px;
+        display: block;
+        background: #ffffff;
+        margin: auto;
+    }
+    .organic_part{
+        padding-top: 100px;
+    }
+    .img_box{
+        background: #f5f5f5;
+        background-size: auto;
+        width: 550px;
+        height: 500px;
+    }
+    .juice_box img{
+        padding-left: 30px;
+        padding-top: 40px;
+    }
+    .juice_1st_text a{
+        text-decoration: none;
+        color: #151515;
+        font-family: "Poppins", sans-serif;
+        font-size: 24px;
+        padding-left: 180px;
+    }
+    .juice_price{
+        display: flex;
+        gap: 10px;
+        padding-left: 170px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        font-weight: bold;
+    }
+    .lineth{
+        color: #a3a3a3;
+    }
+    .three_dots{
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+    .three_dots span{
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        /* cursor: pointer; */
+        background-color: #d7d7d7;
+    }
+    .three_dots div{
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        background-color: #3da568;
+    }
+    .content_wrapper{
+        display: flex;
+    }
+    .org_head h2{
+        font-size: 55px;
+        font-weight: 600;
+        color: #151515;
+        padding: 40px 50px;
+    }
+    .org_text{
+        display: flex;
+        gap: 20px;
+        padding: 30px 0 30px 66px;
+    }
+    .org_text p{
+        padding: 5px 0;
+        font-weight: 500;
+        font-family: "Poppins", sans-serif;
+        color: #151515;
+    }
+    /* .org_text a::before{
+        border: 1px solid rgba(255, 255, 255, 0.23);
+    } */
+    .org_text a{
+        background: #ffffff;
+        color: #76aa6f;
+        box-shadow: 0 0 5px 0 rgba(1, 3, 4, 0.19);
+        font-size: 22px;
+        line-height: 36px;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        text-align: center;
+    }
+    .second_org_text{
+        display: flex;
+    }
+    .ld_box_icon{
+        display: flex;
+        /* align-content: center;
+        justify-content: space-between; */
+        padding: 50px 50px;
+        gap: 20px;
+    }
+    .ld_box1{
+        margin: auto;
+        background: #fff;
+        border: 1px solid #ccc;
+        text-align: center;
+        flex: 1;
+        padding-bottom: 20px;
+    }
+    .ld_box1 a{
+        color: #6fbf73;
+        font-size: 38px;
+        margin-right: 220px 150px;
+        /* padding-right: 75px;
+        text-align: center; */
+        /* align-content: center; */
+    }
+    .ld_box1_1st{
+        margin: 10px 0;
+        font-size: 18px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        color: #151515;
+        cursor: pointer;
+    }
+    .ld_box1_1st:hover{
+        margin: 10px 0;
+        font-size: 18px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        color: #6fbf73;
+    }
+    .ld_box1_2nd{
+        font-size: 16px;
+        color: #777;
+        font-weight: normal;
+        font-family: "Lato", sans-serif;
+    }
+    .section5_area{
+        background: url(images/bg-pattern-1.jpg) repeat;
+        background-size: cover;
+        padding: 110px 0;
+        background-color: #f5f5f5;
+    }
+    .section5_text h2{
+        font-family: "Poppins", -apple-system, BlinkMacSystemFont,
+         "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-weight: 600;
+        font-size: 55px;
+        text-align: center;
+    }
+    .section5_text p{
+        font-family: "Poppins", -apple-system, BlinkMacSystemFont, 
+        "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-size: 18px;
+        /* font-weight: 400; */
+        color: #a3a3a3;
+        text-align: center;
+        line-height: 2;
+        padding-top: 20px;
+        letter-spacing: .02em;
+    }
+    .sec5_img{
+        display: flex;
+        text-align: center;
+        gap: 100px;
+        justify-content: space-between;
+        padding: 50px 100px;
+    }
+    .client_img_area h3{
+        font-size: 14px;
+        color: #151515;
+        letter-spacing: .1em;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    .img_client img{
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    .client_img_area p{
+        font-style: italic;
+        font-size: 16px;
+        font-family: "Lato", sans-serif;
+        color: #76aa6f;
+        cursor: pointer;
+    }
+    .client_img_area1 p{
+        font-style: italic;
+        font-size: 16px;
+        font-family: "Lato", sans-serif;
+        color: #76aa6f;
+        cursor: pointer;
+    }
+    .client_img_area1 h3{
+        font-size: 14px;
+        color: #151515;
+        letter-spacing: .1em;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    .img_client1 img{
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    .client_img_area1{
+        opacity: 50%;
+    }
+    .client_img_area1:hover{
+        opacity: 100%;
+    }
+    .section6_area{
+        background: url(images/parallax-4.jpg) no-repeat;
+        background-size: cover;
+        height: 375px;
+    }
+    .sec6_text {
+        font-family: "Poppins", sans-serif;
+        color: #fff;
+        margin: auto;
+        padding-top: 125px;
+    }
+    .sec6_text h3 {
+        font-size: 36px;
+        color: #fff;
+    }
+    .sec6_text span{
+        font-size: 36px;
+    } 
+</style>
+<body>
+    <header>
+        <div class="ld_header_banner">
+            <div class="ld_container">
+                <div class="ld_top_header">
+                    <div class="mob_no">Call us: +1 (844) 123 456 78 <br><a href="#" class="email_id">info@demolink.org</a></div>
+                    <!-- <a class="email_id" href="#">info@demolink.org</a> -->
+                    <a class="ld_logo_1" href="#">
+                        <img src="images/logo-ld.webp" alt="">
+                    </a>
+                    <div>
+                        <a href="#" class="ld_search_icon"><i class="fa-solid fa-magnifying-glass"></i></i></a>
+                        <a href="#" class="ld_cart_icon"><i class="fa-solid fa-cart-shopping"></i></a>
+                        <a href="#" class="round_text">en</a>
+                    </div>
+                </div>
+                <nav>
+                    <ul class="ld_menu_bar">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">pages</a></li>
+                        <li><a href="#">blog</a></li>
+                        <li><a href="#">gallery</a></li>
+                        <li><a href="#">elements</a></li>
+                        <li><a href="#">shop</a></li>
+                    </ul>
+                </nav>
+                <div class="ld_banner">
+                    <h2>Tasty Way<br>to Healthier Life</h2>
+                    <p>Our organic drinks contain all necessary<br>elements and vitamins for your health.</p>
+                    <a href="#" class="ld_banner_btn">SHOP NOW</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="ld_section1">
+        <div class="ld_container">
+            <div class="ld_section1_area">
+                <div class="ld_section1_box">
+                    <div class="ld_section1_icon"></div>
+                    <div class="ld_section1_para">
+                        <h3>100% organic</h3>
+                        <p>We make our products from 100%<br>organic and fresh ingredients full of<br>vitamins and nutrients.</p>
+                    </div>
+                </div>
+                <div class="ld_section1_box">
+                    <div class="ld_section1_icon"></div>
+                    <div class="ld_section1_para">
+                        <h3>Good for health</h3>
+                        <p>Our drinks are exceptionally good for<br>boosting your health and increasing<br>your energy level.</p>
+                    </div>
+                </div>
+                <div class="ld_section1_img"><img src="images/fruit1_ld.webp" alt=""></div>
+                <div class="ld_section1_box">
+                    <div class="ld_section1_icon"></div>
+                    <div class="ld_section1_para">
+                        <h3>No additives</h3>
+                        <p>Our smoothies, healthy drinks, and<br>energy bowls contain no artificial<br>additives, only vital elements.</p>
+                    </div>
+                </div>
+                <div class="ld_section1_box">
+                    <div class="ld_section1_icon"></div>
+                    <div class="ld_section1_para">
+                        <h3>A lot of energy</h3>
+                        <p>We designed our products as the<br>universal organic energetics that can<br>quench your thirst.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ld_section2">
+        <div class="ld_container">
+            <h2 class="new_flavors">New Flavors</h2>
+            <div class="ld_section2_area">
+                <div class="ld_product_detailes">
+                    <div class="sale_btn">SALE</div>
+                    <div class="product1_png">
+                        <img src="images/product-1-95x175.png" alt="">
+                    </div>
+                    <h3 class="mango_text">MANGO</h3>
+                    <div class="product_text">
+                        <p class="lineth">$30.00</p>
+                        <span class="mainpr">$23.00</span>
+                    </div>
+                </div>
+                <div class="ld_product_detailes">
+                    <div class="product1_png">
+                        <img src="images/product-2-95x175.webp" alt="">
+                    </div>
+                    <h3 class="mango_text">Strawberry</h3>
+                    <div class="product_text">
+                        <span class="main_price">$13.00</span>
+                    </div>
+                </div>
+                <div class="ld_product_detailes">
+                    <div class="product1_png">
+                        <img src="images/product-3-95x175.png" alt="">
+                    </div>
+                    <h3 class="mango_text">Apple</h3>
+                    <div class="product_text">
+                        <span class="main_price">$17.00</span>
+                    </div>
+                </div>
+                <div class="ld_product_detailes">
+                    <div class="product1_png">
+                        <img src="images/product-7-95x175.webp" alt="">
+                    </div>
+                    <h3 class="mango_text">Carrots</h3>
+                    <div class="product_text">
+                        <span class="main_price">$13.00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="ld_section3_area">
+                <div class="ld_product_detailes">
+                    <div class="product1_png">
+                        <img src="images/product-4-95x175.png"alt="">
+                    </div>
+                    <h3 class="mango_text">Guava</h3>
+                    <div class="product_text">
+                        <span class="main_price">$13.00</span>
+                    </div>
+                </div>
+                <div class="ld_product_detailes">
+                    <div class="product1_png">
+                        <img src="images/product-5-95x175.webp" alt="">
+                    </div>
+                    <h3 class="mango_text">Grapes</h3>
+                    <div class="product_text">
+                        <span class="main_price">$17.00</span>
+                    </div>
+                </div>
+                <div class="ld_product_detailes">
+                    <div class="product1_png">
+                        <img src="images/product-6-95x175.webp" alt="">
+                    </div>
+                    <h3 class="mango_text">Bananas</h3>
+                    <div class="product_text">
+                        <p class="lineth">$30.00</p>
+                        <span class="mainpr">$23.00</span>
+                    </div>
+                </div>
+                <div class="ld_product_detailes">
+                    <div class="product1_png">
+                        <img src="images/product-8-95x175.webp" alt="">
+                    </div>
+                    <h3 class="mango_text">Orange</h3>
+                    <div class="product_text">
+                        <span class="main_price">$17.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ld_section4">
+        <div class="ld_container">
+            <div class="ld_section4_area">
+                <div class="ld_number">
+                    <div class="sec4_text">
+                        <h2>245</h2>
+                        <p>New drinks and <br>
+                            smoothies
+                        </p>
+                    </div>
+                    <div class="sec4_text">
+                        <h2>382</h2>
+                        <p>Special <br>
+                            offers
+                        </p>
+                    </div>
+                    <div class="sec4_text">
+                        <h2>1267</h2>
+                        <p>Satisfied <br>
+                            clients
+                        </p>
+                    </div>
+                    <div class="sec4_text">
+                        <h2>474</h2>
+                        <p>Partners throughout <br>
+                            the USA
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="organic_part">
+        <div class="ld_container">
+            <div class="content_wrapper">
+                <div class="img_box">
+                    <div class="juice_box">
+                        <img src="images/product-big-1-470x324.png" alt="">
+                    </div>
+                    <h3 class="juice_1st_text"><a href="#">AURORE GRAPE</a></h3>
+                    <div class="juice_price">
+                        <p class="lineth">$20.00</p>
+                        <span class="mainpr">$15.00</span>
+                    </div>
+                    <div class="three_dots">
+                        <div class="1st_dot"></div>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+                <div class="organic_text">
+                    <div class="org_head">
+                        <h2>Why Organic?</h2>
+                    </div>
+                    <div class="org_text_line">
+                        <div class="org_text">
+                            <a href="#"><i class="fa-solid fa-angle-right"></i></a>
+                            <p>Organic drinks contain more antioxidants.</p>
+                        </div>
+                        <div class="org_text">
+                            <a href="#"><i class="fa-solid fa-angle-right"></i></a>
+                            <p>Organic drinks are better for the environment.</p>
+                        </div>
+                        <div class="org_text">
+                            <a href="#"><i class="fa-solid fa-angle-right"></i></a>
+                            <p>They're higher in nutrients.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="ld_container">
+            <div class="ld_box_icon">
+                <div class="ld_box1">
+                    <a class="ld_box_logo" href="#"><i class="fa-solid fa-location-dot"></i></a>
+                    <p<a class="ld_box1_1st" href="#">FREE SHIPPING</a></p>
+                    <p class="ld_box1_2nd">Enjoy our fast & free delivery</p>
+                </div>
+                <div class="ld_box1">
+                    <a class="ld_box_logo" href="#"><i class="fa-regular fa-comments"></i></a>
+                    <p<a class="ld_box1_1st" href="#">Customer care</a></p>
+                    <p class="ld_box1_2nd">Always ready to help you</p>
+                </div>
+                <div class="ld_box1">
+                    <a class="ld_box_logo" href="#"><i class="fa-regular fa-heart"></i></i></a>
+                    <p<a class="ld_box1_1st" href="#">Healthy & energetic</a></p>
+                    <p class="ld_box1_2nd">Our drinks are very nutritious.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="section5_area">
+            <div class="ld_container">
+                <div class="section5_text">
+                    <h2>What People Say</h2>
+                    <p>I am very grateful to you for introduction me and my whole family to your extensive range of <br>
+                        smoothies and organic juices.We are true fans and regular customers of your store!</p>
+                </div>
+                <div class="sec5_img">
+                    <div class="client_img_area">
+                        <div class="img_client"><img src="images/user-7-87x87.jpg" alt=""></div>
+                        <h3>PATRICK GOODMAN</h3>
+                        <p>Client</p>
+                    </div>
+                    <div class="client_img_area1">
+                        <div class="img_client1"><img src="images/user-8-87x87.jpg" alt=""></div>
+                        <h3>PATRICK GOODMAN</h3>
+                        <p>Client</p>
+                    </div>
+                    <div class="client_img_area1">
+                        <div class="img_client1"><img src="images/user-9-87x87.jpg" alt=""></div>
+                        <h3>PATRICK GOODMAN</h3>
+                        <p>Client</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="section6_area">
+            <div class="ld_container">
+                <div class="sec6_mail_area">
+                    <div class="sec6_text">
+                        <h3>STAY</h3>
+                        <span>connected</span>
+                        <p>Subscribe to our newsletter</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
